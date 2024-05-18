@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DKG Bank ATM</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'BankInterface/css/style.css' %}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap');
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to DKG Bank ATM</h1>
+
+        <div class="user">
+        <form action="{% url 'BankInterface:verify_pin' %}" method="post" id="pinVerificationForm">
+            {% csrf_token %}
+            <label for="card_details">Re-Enter PIN:</label>
+            <input type="password" id="card_pin" name="card_pin" maxlength="4" required><br><br>
+            <button type="submit">Submit</button>
+        </form>
+        </div>
+
+        <div class="box">
+            <div class="navbar">
+                <button class="button-30" name="user_input" type="button" id="balanceBtn" value="1">Check Balance</button>
+                <button class="button-30" name="user_input" type="button" id="withdrawBtn" value="2">Withdraw</button>
+                <button class="button-30" name="user_input" type="button" id="depositBtn" value="3">Deposit</button>
+                <button class="button-30" name="user_input" type="button" id="pinChangeBtn" value="4">Change PIN</button>
+            </div>
+        </div>
+
+        <form action="#" method="post" id="transactionForm" class="hidden">
+            {% csrf_token %}
+            <div id="dynamicInputs" class="hidden">
+
+            </div>
+        </form>
+        
+        <div id="popupModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="popupMessage">
+                    
+                </p>
+            </div>
+        </div>
+        
+        <div id="message"></div>
+    </div>
+      
+    {% load static %}
+    <script src="{% static 'BankInterface/js/script.js' %}"></script>
+</body>
+</html>

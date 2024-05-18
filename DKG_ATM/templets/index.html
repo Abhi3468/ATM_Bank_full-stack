@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User_interface</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'UserInterface/css/style.css' %}">
+    {% load static %}
+    <script src="{% static 'UserInterface/js/app.js' %}"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Jacquard+24+Charted&family=Lugrasimo&display=swap');
+</style>
+<body>
+    <div class="Heading">
+        <h1>Welcome to DKG Bank ATM</h1>
+    </div>
+
+    <div class="outer_box">
+        <div class="box">
+            <span class="sec_box"></span>
+            <form id="pinForm" method="POST">
+                {% csrf_token %}
+                <h2>Hello User!</h2>
+                <div class="input_box">
+                    <input type="text" name="card_number" id="cardNumber" minlength="16" maxlength="16" required>
+                    <span>CARD_NUMBER</span>
+                    <i></i>
+                </div>
+                <div class="input_box">
+                    <input type="password" name="pin" id="password" minlength="4" maxlength="4" required>
+                    <span>PIN</span>
+                    <i class="bi-eye-slash" id="togglePassword"></i>
+                </div>
+                <input type="submit" value="Validate">
+                <div id="validationMessage"></div> <!-- Display validation messages here -->
+            </form>
+        </div>
+        
+    </div>
+
+
+</body>
+</html>
