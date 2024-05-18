@@ -12,7 +12,7 @@ Project Description : This is a full-stack web application for an ATM bank syste
 
 ## Usage
 
-- To use the application:
+To use the application:
 
 - Open your web browser and navigate to http://localhost:8000/.
 - You can use the admin panel at http://localhost:8000/admin/ to manage users and data.
