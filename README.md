@@ -75,5 +75,3 @@ After Python installation.
   #After completeion of app
   python manage.py runserver
 ```
-
-
