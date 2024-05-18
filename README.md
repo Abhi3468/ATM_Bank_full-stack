@@ -1,6 +1,6 @@
 # ATM_Bank_full-stack--> A_Python_Full stack project on ATM_BANK operations.
 
-# Project Description : This is a full-stack web application for an ATM bank system developed using Django.The ATM Bank Full-Stack Application allows users to interact with an ATM-like system through a web interface. Users can verify their PIN, check their balance, make deposits and withdrawals, and change their PIN. The backend logic is handled by Django, and the frontend includes responsive design for better user experience.
+Project Description : This is a full-stack web application for an ATM bank system developed using Django.The ATM Bank Full-Stack Application allows users to interact with an ATM-like system through a web interface. Users can verify their PIN, check their balance, make deposits and withdrawals, and change their PIN. The backend logic is handled by Django, and the frontend includes responsive design for better user experience.
 
 ## Features
 
