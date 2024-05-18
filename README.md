@@ -10,6 +10,33 @@ Project Description : This is a full-stack web application for an ATM bank syste
 - Deposit funds
 - Change PIN
 
+#### Useage
+
+- To use the application:
+
+- Open your web browser and navigate to http://localhost:8000/.
+- You can use the admin panel at http://localhost:8000/admin/ to manage users and data.
+
+## Endpoints
+
+- UserInterface
+GET /: Home page
+POST /verify_pin/: Verify user PIN
+
+- BankInterface
+POST /available_balance/: Check available balance
+POST /withdraw/: Withdraw funds
+POST /deposit/: Deposit funds
+POST /pin_change/: Change PIN
+## Tech Stack
+
+**Client:** HTML, CSS, JavaScript
+
+**Server:** Django, python
+
+**Database:** SQLite (default, can be changed to PostgreSQL, MySQL, etc.)
+
+**Version Control:** Git, GitHub
 
 ## Installation
 
@@ -49,30 +76,4 @@ After Python installation.
   python manage.py runserver
 ```
 
-#### Useage
 
-- To use the application:
-
-- Open your web browser and navigate to http://localhost:8000/.
-- You can use the admin panel at http://localhost:8000/admin/ to manage users and data.
-
-## Endpoints
-
-- UserInterface
-GET /: Home page
-POST /verify_pin/: Verify user PIN
-
-- BankInterface
-POST /available_balance/: Check available balance
-POST /withdraw/: Withdraw funds
-POST /deposit/: Deposit funds
-POST /pin_change/: Change PIN
-## Tech Stack
-
-**Client:** HTML, CSS, JavaScript
-
-**Server:** Django, python
-
-**Database:** SQLite (default, can be changed to PostgreSQL, MySQL, etc.)
-
-**Version Control:** Git, GitHub
