@@ -68,8 +68,7 @@ After Python installation.
 
 
 - Create your first app & Run development server
-
-  ```bash
+ ```bash
   django-admin startapp appname
   
   #After completeion of app
