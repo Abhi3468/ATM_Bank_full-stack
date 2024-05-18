@@ -10,7 +10,7 @@ Project Description : This is a full-stack web application for an ATM bank syste
 - Deposit funds
 - Change PIN
 
-#### Useage
+## Usage
 
 - To use the application:
 
