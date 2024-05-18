@@ -34,7 +34,7 @@ POST /pin_change/: Change PIN
 
 **Server:** Django, python
 
-**Database:** SQLite (default, can be changed to PostgreSQL, MySQL, etc.)
+**Database:** MySQL(default, can be changed to PostgreSQL, SQLite etc.)
 
 **Version Control:** Git, GitHub
 
