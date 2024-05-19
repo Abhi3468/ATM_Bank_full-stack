@@ -2,7 +2,6 @@
 
 Project Description : This is a full-stack web application for an ATM bank system developed using Django.The ATM Bank Full-Stack Application allows users to interact with an ATM-like system through a web interface. Users can verify their PIN, check their balance, make deposits and withdrawals, and change their PIN. The backend logic is handled by Django, and the frontend includes responsive design for better user experience.
 
-
 ## Features
 
 - User PIN verification
@@ -11,6 +10,35 @@ Project Description : This is a full-stack web application for an ATM bank syste
 - Deposit funds
 - Change PIN
 
+
+## Usage
+
+To use the application:
+
+- Open your web browser and navigate to http://localhost:8000/.
+- You can use the admin panel at http://localhost:8000/admin/ to manage users and data.
+
+## Endpoints
+
+- UserInterface
+GET /: Home page
+POST /verify_pin/: Verify user PIN
+
+- BankInterface
+POST /available_balance/: Check available balance
+POST /withdraw/: Withdraw funds
+POST /deposit/: Deposit funds
+POST /pin_change/: Change PIN
+
+## Tech Stack
+
+**Client:** HTML, CSS, JavaScript
+
+**Server:** Django, python
+
+**Database:** MySQL(default, can be changed to PostgreSQL, SQLite etc.)
+
+**Version Control:** Git, GitHub
 
 ## Installation
 
@@ -39,20 +67,14 @@ After Python installation.
 ```bash
   django-admin startproject projectname
 ```
-
-
-- Create your first app & Run development server
-
-```bash
+- Create your first app & Run development server  
+ ```bash
   django-admin startapp appname
   
   #After completeion of app
   python manage.py runserver
 ```
 
-
-
-    
 ## Useage
 
 - To use the application:
@@ -71,6 +93,7 @@ POST /available_balance/: Check available balance
 POST /withdraw/: Withdraw funds
 POST /deposit/: Deposit funds
 POST /pin_change/: Change PIN
+
 ## Tech Stack
 
 **Client:** HTML, CSS, JavaScript
@@ -80,3 +103,5 @@ POST /pin_change/: Change PIN
 **Database:** SQLite (default, can be changed to PostgreSQL, MySQL, etc.)
 
 **Version Control:** Git, GitHub
+
+
