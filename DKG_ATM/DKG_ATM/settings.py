@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'UserInterface.apps.UserInterfaceConfig',
+    'UserInterface',
     'BankInterface',
     
 ]
@@ -86,7 +86,7 @@ DATABASES = {
         'NAME': 'KRSNA',
         'USER':'root',
         'PASSWORD':'Abhi@6362751007',
-        'HOST':'localhost'   
+        'HOST':'localhost',  
     },
 
     'UserInterface_db': {
@@ -94,7 +94,8 @@ DATABASES = {
         'NAME': 'USER_INTERFACE',
         'USER':'root',
         'PASSWORD':'Abhi@6362751007',
-        'HOST':'localhost'   
+        'HOST':'localhost',
+        'PORT': '3306' 
     },
 
      'BankInterface_db': {

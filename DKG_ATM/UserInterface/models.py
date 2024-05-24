@@ -1,12 +1,8 @@
 from django.db import models
+from BankInterface.models import Account  # Import the Account model
 
-# Create your models here.
 class UserInterface(models.Model):
-    card_number = models.CharField(max_length=16)
-    pin = models.CharField(max_length=4)
+    account = models.OneToOneField(Account, on_delete=models.CASCADE)  # Create a one-to-one relationship with Account
 
     def __str__(self):
-        return self.card_number
-
-
-
+        return self.account.card_number  # Use card_number from the linked Account model

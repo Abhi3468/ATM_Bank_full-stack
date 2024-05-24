@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault(); // Prevent form submission
 
         const cardNumber = document.getElementById('cardNumber').value;
-        const pin = passwordField.value;
+        const card_pin = passwordField.value;
 
         fetch('/validate/', {
             method: 'POST',
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 'Content-Type': 'application/json',
                 'X-CSRFToken': getCookie('csrftoken') // Get CSRF token
             },
-            body: JSON.stringify({ card_number: cardNumber, pin: pin })
+            body: JSON.stringify({ card_number: cardNumber, pin: card_pin }) // Ensure keys match backend
         })
         .then(response => {
             if (response.ok) {
@@ -42,11 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 window.location.href = '/next_page/';
             } else {
                 // Validation failed, display error message
-                if (!data.cardNumber && !data.pin) {
-                    validationMessage.innerText = 'USER NOT EXISTS';
-                } else {
-                    validationMessage.innerText = 'USER CREDENTIALS ARE INCORRECT';
-                }
+                validationMessage.innerText = data.message || 'USER CREDENTIALS ARE INCORRECT';
             }
         })
         .catch(error => {

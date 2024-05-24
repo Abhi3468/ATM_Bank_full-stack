@@ -10,9 +10,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function getCSRFToken() {
         const cookieValue = document.cookie
-            .split('; ')
-            .find(cookie => cookie.startsWith('csrftoken='))
-            .split('=')[1];
+            .split("; ")
+            .find(cookie => cookie.startsWith("csrftoken="))
+            .split("=")[1];
         return cookieValue;
     }
 
@@ -50,26 +50,25 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .then(response => response.json())
         .then(data => {
-            if (data.message === 'Verified') {
+            if (data.message === "Verified") {
                 showPopup("PIN Verified");
                 pinVerified = true;
-                disableButtons();
-                localStorage.setItem('account_number', data.account_number); // Store account number
+                localStorage.setItem('card_number', data.card_number);
+               // console.log(data.card_number); // Store account number
             } else {
                 showError("Invalid PIN");
             }
         })
         .catch(error => {
             showError("Unable to verify PIN");
-            console.error('Error:', error);
+            console.error("Error:", error);
         });
     });
-        
 
     balanceBtn.addEventListener("click", function() {
         if (!pinVerified) return;
-        const accountNumber = localStorage.getItem('account_number'); // Get account number from local storage
-        if (!accountNumber) {
+        const cardNumber = localStorage.getItem("card_number"); // Get account number from local storage
+        if (!cardNumber) {
             showError("Account number is missing.");
             return;
         }
@@ -79,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 "Content-Type": "application/json",
                 "X-CSRFToken": getCSRFToken()
             },
-            body: JSON.stringify({ "account_number": accountNumber })
+            body: JSON.stringify({ card_number: cardNumber })
         })
         .then(response => response.json())
         .then(data => {
@@ -91,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .catch(error => {
             showError("Unable to fetch balance");
-            console.error('Error:', error);
+            console.error("Error:", error);
         });
     });
 
@@ -99,14 +98,14 @@ document.addEventListener("DOMContentLoaded", function() {
         const amount = prompt("Enter Amount:");
         if (amount !== null) {
             const csrftoken = getCSRFToken();
-            const accountNumber = localStorage.getItem('account_number');
+            const cardNumber = localStorage.getItem("card_number");
             fetch(url, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                     "X-CSRFToken": csrftoken
                 },
-                body: JSON.stringify({ account_number: accountNumber, amount: amount })
+                body: JSON.stringify({ card_number: cardNumber, amount: amount })
             })
             .then(response => response.json())
             .then(data => {
@@ -114,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function() {
             })
             .catch(error => {
                 showError("Unable to perform transaction");
-                console.error('Error:', error);
+                console.error("Error:", error);
             });
         }
     }
@@ -134,14 +133,14 @@ document.addEventListener("DOMContentLoaded", function() {
         const newPin = prompt("Enter New PIN:");
         if (newPin !== null) {
             const csrftoken = getCSRFToken();
-            const accountNumber = localStorage.getItem('account_number');
+            const cardNumber = localStorage.getItem("card_number");
             fetch("/pin_change/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                     "X-CSRFToken": csrftoken
                 },
-                body: JSON.stringify({ account_number: accountNumber, new_pin: newPin })
+                body: JSON.stringify({ card_number: cardNumber, new_pin: newPin })
             })
             .then(response => response.json())
             .then(data => {
@@ -149,16 +148,9 @@ document.addEventListener("DOMContentLoaded", function() {
             })
             .catch(error => {
                 showError("Unable to change PIN");
-                console.error('Error:', error);
+                console.error("Error:", error);
             });
         }
     });
-
-    function disableButtons() {
-        balanceBtn.disabled = false;
-        withdrawBtn.disabled = false;
-        depositBtn.disabled = false;
-        pinChangeBtn.disabled = false;
-    }
 
 });

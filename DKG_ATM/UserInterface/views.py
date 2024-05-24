@@ -1,5 +1,6 @@
-from django.shortcuts import render,HttpResponse,HttpResponseRedirect
-from . models import UserInterface
+from django.shortcuts import render, HttpResponse, HttpResponseRedirect
+from BankInterface.models import Account  # Import the Account model
+from .models import UserInterface
 from django.http import JsonResponse
 import json
 
@@ -16,13 +17,13 @@ def validate(request):
         pin = data.get('pin')
 
         try:
-            user = UserInterface.objects.get(card_number=card_number, pin=pin)
+            account = Account.objects.get(card_number=card_number, card_pin=pin)
+            user = UserInterface.objects.get(account=account)
             return JsonResponse({'valid': True})
-        except UserInterface.DoesNotExist:
-            return JsonResponse({'valid': False})
+        except (Account.DoesNotExist, UserInterface.DoesNotExist):
+            return JsonResponse({'valid': False, 'message': 'USER NOT EXISTS'})
     else:
         return JsonResponse({'error': 'Invalid request method'})
     
-
 def next_page(request):
     return render(request, "next_page.html")

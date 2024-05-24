@@ -21,18 +21,13 @@ class AppRouter:
 
     def allow_relation(self, obj1, obj2, **hints):
         if (
-            obj1._meta.app_label == 'BankInterface' and
-            obj2._meta.app_label == 'BankInterface'
-        ):
-            return True
-        elif (
-            obj1._meta.app_label == 'UserInterface' and
-            obj2._meta.app_label == 'UserInterface'
+            obj1._meta.app_label in ('BankInterface', 'UserInterface') and
+            obj2._meta.app_label in ('BankInterface', 'UserInterface')
         ):
             return True
         return None
 
-    def allow_migrate(self, db, app_label, model_name = None, **hints):
+    def allow_migrate(self, db, app_label, model_name=None, **hints):
         if app_label == 'BankInterface':
             return db == 'BankInterface_db'
         elif app_label == 'UserInterface':
