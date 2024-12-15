@@ -86,7 +86,7 @@ DATABASES = {
         'NAME': 'KRSNA',
         'USER':'root',
         'PASSWORD':'Abhi@6362751007',
-        'HOST':'localhost',  
+        'HOST':'localhost'  
     },
 
     'UserInterface_db': {

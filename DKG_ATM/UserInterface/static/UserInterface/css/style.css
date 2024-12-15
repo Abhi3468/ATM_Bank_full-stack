@@ -1,261 +1,263 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family:"Lugrasimo", cursive;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:"Lugrasimo", cursive;
 }
 
 body{
-    background-image: url(https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-    /* background: rgb(15, 15, 15); */
+  /* background: rgba(28, 172, 187); */
+  background-image: linear-gradient(to right, #434343 0%, rgba(0, 0, 0, 0.904) 100%);
+  /* background: rgb(15, 15, 15); */
 }
 
 .outer_box{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 70vh;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 70vh;
 }
 
 .Heading{
-  min-height: 20vh;
-  color: #24aaaa;
-  text-align: center;
-  -webkit-animation: Heading 1s ease-in-out infinite alternate;
-  -moz-animation: Heading 1s ease-in-out infinite alternate;
-  animation: Heading 1s ease-in-out infinite alternate;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+min-height: 20vh;
+color: #f9fcfc;
+text-align: center;
+-webkit-animation: Heading 1s ease-in-out infinite alternate;
+-moz-animation: Heading 1s ease-in-out infinite alternate;
+animation: Heading 1s ease-in-out infinite alternate;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 @-webkit-keyframes Heading
 {
-  from {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px  #24aaaa, 0 0 20px  #24aaaa, 0 0 25px  #24aaaa, 0 0 30px  #24aaaa, 0 0 35px  #24aaaa;
-  }
-  to {
-    text-shadow: 0 0 0px #fff, 0 0 15px  #24aaaa, 0 0 20px  #24aaaa, 0 0 25px #24aaaa, 0 0 30px  #24aaaa, 0 0 35px  #24aaaa, 0 0 40px  #24aaaa;
-  }
+from {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px  #272929, 0 0 20px  #272929, 0 0 25px  #272929, 0 0 30px  #272929, 0 0 35px  #272929;
+}
+to {
+  text-shadow: 0 0 0px #fff, 0 0 15px  #272929, 0 0 20px  #272929, 0 0 25px #272929, 0 0 30px  #272929, 0 0 35px  #272929, 0 0 40px  #272929;
+}
 }
 .box{
-    position: relative;
-    /* backdrop-filter: blur(5px);  */
-    width: 380px;
-    height: 420px;
-    background: transparent;
-    border-radius: 8px;
-    overflow: hidden;
-  }
+  position: relative;
+  /* backdrop-filter: blur(5px);  */
+  width: 380px;
+  height: 420px;
+  background: transparent;
+  border-radius: 8px;
+  overflow: hidden;
+}
 
-  .box::before
-  {
-    content: "";
-    position: absolute;
-    background-color: transparent;
-    top: -50%;
-    left: -50%;
-    width: 380px;
-    height: 420px;
-    transform-origin:bottom right;
-    background: linear-gradient(0deg, transparent,transparent,
-    #24aaaa,#24aaaa,#24aaaa);
-    z-index: 1;
-    animation: animate 6s linear infinite;
-  }
+.box::before
+{
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  transform-origin:bottom right;
+  background: linear-gradient(0deg, transparent,transparent,
+   #565254, #565254, #565254);
+  z-index: 1;
+  animation: animate 6s linear infinite;
+}
 
-  .box::after{
-    content: "";
-    position: absolute;
-    background-color: transparent;
-    top: -50%;
-    left: -50%;
-    width: 380px;
-    height: 420px;
-    transform-origin:bottom right;
-    background: linear-gradient(0deg, transparent,transparent,
-    #24aaaa,#24aaaa,#24aaaa);
-    z-index: 1;
-    animation: animate 6s linear infinite;
-    animation-delay: -3s;
-  }
+.box::after{
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  transform-origin:bottom right;
+  background: linear-gradient(0deg, transparent,transparent,
+   #565254, #565254, #565254);
+  z-index: 1;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
 
-  .sec_box
-  {
-    position: absolute;
-    inset: 0;
-    top: 0;
-  }
+.sec_box
+{
+  position: absolute;
+  inset: 0;
+  top: 0;
+}
 
-  .sec_box::before
-  {
-    content: "";
-    position: absolute;
-    background-color: transparent;
-    top: -50%;
-    left: -50%;
-    width: 380px;
-    height: 420px;
-    transform-origin:bottom right;
-    background: linear-gradient(0deg, transparent,transparent,
-    #f6f8f8,#f5f7f7,#f4f7f7);
-    z-index: 1;
-    animation: animate 6s linear infinite;
-    animation-delay: -1.5s;
-  }
+.sec_box::before
+{
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  transform-origin:bottom right;
+  background: linear-gradient(0deg, transparent,transparent,
+  #f6f8f8,#f5f7f7,#f4f7f7);
+  z-index: 1;
+  animation: animate 6s linear infinite;
+  animation-delay: -1.5s;
+}
 
-  .sec_box::after
+.sec_box::after
+{
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  transform-origin:bottom right;
+  background: linear-gradient(0deg, transparent,transparent,
+  #f6f8f8,#f5f7f7,#f4f7f7);
+  z-index: 1;
+  animation: animate 6s linear infinite;
+  animation-delay: -4.5s;
+}
+
+@keyframes animate
+{
+  0%
   {
-    content: "";
-    position: absolute;
-    background-color: transparent;
-    top: -50%;
-    left: -50%;
-    width: 380px;
-    height: 420px;
-    transform-origin:bottom right;
-    background: linear-gradient(0deg, transparent,transparent,
-    #f6f8f8,#f5f7f7,#f4f7f7);
-    z-index: 1;
-    animation: animate 6s linear infinite;
-    animation-delay: -4.5s;
+    transform: rotate(0deg);
   }
-  
-  @keyframes animate
+  100%
   {
-    0%
-    {
-      transform: rotate(0deg);
-    }
-    100%
-    {
-      transform: rotate(360deg);
-    }
+    transform: rotate(360deg);
   }
-  
-  .box form{
-    position: absolute;
-    inset: 4px;
-    background: #090909;
-    /* backdrop-filter: blur(15px); */
-    padding: 50px 40px;
-    border-radius: 8px;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .box form h2{
-    color: #f6f2f2;
-    font-weight: 500;
-    text-align: center;
-    letter-spacing: 0.1rem;
-  }
-  
-  .box form .input_box{
-    position: relative;
-    width: 100%;
-    margin-top: 35px;
-  }
-  
-  .box form .input_box input
-  {
+}
+
+.box form{
+  position: absolute;
+  inset: 4px;
+  background: #fdfcfc;
+  background-image: linear-gradient(to right, #565254, #f6f6f6);
+  /* backdrop-filter: blur(15px); */
+  padding: 50px 40px;
+  border-radius: 8px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.box form h2{
+  color: #121111;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.1rem;
+}
+
+.box form .input_box{
   position: relative;
   width: 100%;
-  padding: 20px 10px 10px;
-  background:transparent;
-  outline: none;
-  border: none;
-  box-shadow: none;
-  color: #000000;
-  font-size: 1rem;
+  margin-top: 35px;
+}
+
+.box form .input_box input
+{
+position: relative;
+width: 100%;
+padding: 20px 10px 10px;
+background:transparent;
+outline: none;
+border: none;
+box-shadow: none;
+color: #000000;
+font-size: 1rem;
+letter-spacing: 0.05rem;
+transition: 0.5s;
+z-index: 10;
+}
+
+.box form .input_box span{
+  position: absolute;
+  left: 0;
+  padding: 20px 0px 10px;
+  pointer-events: none;
+  color: #0e0e0e;
+  font-size: 1em;  
   letter-spacing: 0.05rem;
   transition: 0.5s;
-  z-index: 10;
-  }
+}
+
+.box form .input_box input:valid ~ span,
+.box form .input_box input:focus ~ span
+{
+  color: #ffffff;
+  font-size: 0.75rem;
+  transform: translateY(-30px);
+}
+
+.box form .input_box i{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #605f5f;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: 0.5 sec;
+  pointer-events: none;
+}
+
+.box form .input_box input:valid ~ i,
+.box form .input_box input:focus ~ i
+{
+  height: 40px;
   
-  .box form .input_box span{
-    position: absolute;
-    left: 0;
-    padding: 20px 0px 10px;
-    pointer-events: none;
-    color: #24aaaa;
-    font-size: 1em;  
-    letter-spacing: 0.05rem;
-    transition: 0.5s;
-  }
-  
-  .box form .input_box input:valid ~ span,
-  .box form .input_box input:focus ~ span
-  {
-    color: #f6f6f6;
-    font-size: 0.75rem;
-    transform: translateY(-30px);
-  }
-  
-  .box form .input_box i{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background: #24aaaa;
-    border-radius: 4px;
-    overflow: hidden;
-    transition: 0.5 sec;
-    pointer-events: none;
-  }
-  
-  .box form .input_box input:valid ~ i,
-  .box form .input_box input:focus ~ i
-  {
-    height: 40px;
-    
- }
+}
 .box form  input[type = "submit"]
 {
-  
-  border: none;
-  outline: none;
-  padding: 10px 20px;
-  background: #24aaaa;
-  cursor: pointer;
-  font-size: 0.8em;
-  border-radius: 6px;
-  font-weight: 600;
-  width: 100px;
-  margin-top: 10px;
+
+border: none;
+outline: none;
+padding: 10px 20px;
+background-image: linear-gradient(to right, #f6f6f6, #565254);
+cursor: pointer;
+font-size: 0.8em;
+border-radius: 6px;
+font-weight: 600;
+width: 100px;
+margin-top: 10px;
 
 }
 
 
 @media screen and (max-width: 576px) {
-  .box {
-      width: 95%; /* Adjusted for smaller screens */
-      max-width: none; /* Remove maximum width for better responsiveness */
-  }
+.box {
+    width: 95%; /* Adjusted for smaller screens */
+    max-width: none; /* Remove maximum width for better responsiveness */
+}
 }
 
 /* Media query for tablet screens */
 @media screen and (min-width: 577px) and (max-width: 768px) {
-  .box {
-      width: 80%; /* Adjusted for tablet screens */
-  }
+.box {
+    width: 80%; /* Adjusted for tablet screens */
+}
 }
 
 .input_box i.bi-eye {
-  /* Your styles for the eye icon when it's visible */
-  color: #000000; /* Change the color as needed */
+/* Your styles for the eye icon when it's visible */
+color: #000000; /* Change the color as needed */
 }
 
 .input_box i.bi-eye-slash {
-  /* Your styles for the eye icon when it's hidden */
-  color: antiquewhite; /* Change the color as needed */
+/* Your styles for the eye icon when it's hidden */
+color: antiquewhite; /* Change the color as needed */
 }
 
 /* Styles for validation messages */
 #validationMessage {
-  color: rgb(251, 249, 249); /* Color for the validation messages */
-  font-size: 0.5rem; /* Adjust font size as needed */
-  margin-top: 3px; /* Adjust margin as needed */
+color: rgb(251, 249, 249); /* Color for the validation messages */
+font-size: 0.5rem; /* Adjust font size as needed */
+margin-top: 3px; /* Adjust margin as needed */
 }

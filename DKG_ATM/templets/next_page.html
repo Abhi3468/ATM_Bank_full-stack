@@ -7,12 +7,12 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'BankInterface/css/style.css' %}">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to DKG Bank ATM</h1>
+        <h1>Welcome to Bank ATM</h1>
 
         <div class="user">
         <form action="{% url 'BankInterface:verify_pin' %}" method="post" id="pinVerificationForm">

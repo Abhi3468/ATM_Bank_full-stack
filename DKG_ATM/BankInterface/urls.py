@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import path
 from django.urls import path
-from .views import AccountListView, AccountDetailView, WithdrawalView, DepositView, PinChangeView, VerifyPinView, AvailableBalanceView
+from .views import  WithdrawalView, DepositView, PinChangeView, VerifyPinView, AvailableBalanceView
 
 app_name = 'BankInterface'
 
@@ -28,8 +28,8 @@ urlpatterns = [
     path('withdraw/', WithdrawalView.as_view(), name='withdraw'),
     path('deposit/', DepositView.as_view(), name='deposit'),
     path('pin_change/', PinChangeView.as_view(), name='pin_change'),
-    path('accounts/', AccountListView.as_view(), name='account_list'),
-    path('accounts/<str:account_number>/', AccountDetailView.as_view(), name='account_detail'),
+    # path('accounts/', AccountListView.as_view(), name='account_list'),
+    # path('accounts/<str:account_number>/', AccountDetailView.as_view(), name='account_detail'),
     path('admin/', admin.site.urls),
 ]
 
